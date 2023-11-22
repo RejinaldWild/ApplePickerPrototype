@@ -9,10 +9,9 @@ public class AppleTree : MonoBehaviour
     public float speed = 1f;
     public float leftAndRightEdge = 10f;
     public float chanceToChangeDirection = 0.1f;
-    public float secondsBetweenAppleDrops = 1f;
+    public float secondsBetweenAppleDrops = 10f;
 
     
-    // Start is called before the first frame update
     void Start()
     {
         Invoke("DropApple", 2f);
@@ -23,9 +22,9 @@ public class AppleTree : MonoBehaviour
         GameObject apple = Instantiate<GameObject>(applePrefab);
         apple.transform.position = transform.position;
         Invoke("DropApple", secondsBetweenAppleDrops);
+        FindObjectOfType<AudioManager>().Play("LooseApple");
     }
 
-    // Update is called once per frame
     void Update()
     {
         Vector3 pos = transform.position;

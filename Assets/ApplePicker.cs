@@ -11,8 +11,7 @@ public class ApplePicker : MonoBehaviour
     public float basketBottomY = -14f;
     public float basketSpacingY = 2f;
     public List<GameObject> basketList;
-
-    // Start is called before the first frame update
+   
     void Start()
     {
         basketList = new List<GameObject>();
@@ -41,13 +40,13 @@ public class ApplePicker : MonoBehaviour
 
         if(basketList.Count == 0)
         {
+            FindObjectOfType<AudioManager>().Play("LooseGame");
+            //some waiting 
             SceneManager.LoadScene("_Scene_0");
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        else
+        {
+            FindObjectOfType<AudioManager>().Play("LooseBasket");
+        }
     }
 }

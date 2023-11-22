@@ -14,13 +14,7 @@ public class HighScore : MonoBehaviour
             score = PlayerPrefs.GetInt("HighScore");
         }
     }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
     void Update()
     {
         TextMeshProUGUI text = this.GetComponent<TextMeshProUGUI>();

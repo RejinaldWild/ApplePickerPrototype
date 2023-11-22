@@ -32,6 +32,8 @@ public class Basket : MonoBehaviour
         if (collidedWith.tag == "Apple")
         {
             Destroy(collidedWith);
+            FindObjectOfType<AudioManager>().Play("PickApple");
+
         }
 
         int score = Int32.Parse(scoreGT.text);
